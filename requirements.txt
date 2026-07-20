@@ -1,0 +1,4 @@
+# Independent VCF parsers under comparison (Phase 0).
+# Only ONE htslib representative is kept (pysam); vcfpy is a separate codebase.
+pysam==0.24.0
+vcfpy==0.13.8

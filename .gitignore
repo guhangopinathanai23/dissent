@@ -1,0 +1,29 @@
+# Python virtual environment
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Rust build artifacts (keep Cargo.toml + Cargo.lock + src/, ignore build output)
+adapters/noodles_adapter/target/
+
+# Generated mutation files (regenerable from generators/mutate.py + seed)
+data/mutations/
+data/corpus_info/
+data/corpus_gt/
+
+# Scratch / large generated corpora (keep curated findings, ignore bulk runs)
+data/corpus/
+findings/*.tmp
+*.log

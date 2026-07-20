@@ -1,0 +1,15 @@
+CATCH: i00703.vcf_min
+bucket: content_disagreement
+detail: REAL content disagreement [partial; failed: noodles]: pysam vs vcfpy
+input : _final_i00703.vcf
+
+[pysam] pysam (htslib)  kind=ok
+    1 records:
+      20:1110696  REF='A'  ALT=['G', 'T']  INFO={'DP': (10, 99)}
+
+[vcfpy] vcfpy (pure-python)  kind=ok
+    1 records:
+      20:1110696  REF='A'  ALT=['G', 'T']  INFO={'DP': '10,99'}
+
+[noodles] noodles (rust)  kind=exception
+    error: InvalidData: invalid info

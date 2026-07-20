@@ -1,0 +1,15 @@
+CATCH: f01817.vcf_min
+bucket: split_decision
+detail: parsed: noodles; rejected/crashed: pysam[exception], vcfpy[exception]. 1-vs-2: noodles accepted alone.
+input : _final_f01817.vcf
+
+[pysam] pysam (htslib)  kind=exception
+    error: OSError: unable to parse next record
+
+[vcfpy] vcfpy (pure-python)  kind=exception
+    error: InvalidRecordException: The line contains an invalid number of fields. Was 11 but expected 12
+20	14370	rs6054257	G	A	29	PASS	NS=3;DP=14;AF=0.5;DB;H2	GT:GQ:DP:HQ	0|0:48:1:51,51	1|0:48:8:51,51
+
+[noodles] noodles (rust)  kind=ok
+    1 records:
+      20:14370  REF='G'  ALT=['A']

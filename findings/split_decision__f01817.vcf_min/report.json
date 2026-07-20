@@ -1,0 +1,47 @@
+{
+  "label": "f01817.vcf_min",
+  "bucket": "split_decision",
+  "all_parsed": false,
+  "detail": "parsed: noodles; rejected/crashed: pysam[exception], vcfpy[exception]. 1-vs-2: noodles accepted alone.",
+  "input_vcf": "_final_f01817.vcf",
+  "parsers": [
+    {
+      "tool": "pysam (htslib)",
+      "kind": "exception",
+      "num_records": 0,
+      "records": [],
+      "error": "OSError: unable to parse next record"
+    },
+    {
+      "tool": "vcfpy (pure-python)",
+      "kind": "exception",
+      "num_records": 0,
+      "records": [],
+      "error": "InvalidRecordException: The line contains an invalid number of fields. Was 11 but expected 12\n20\t14370\trs6054257\tG\tA\t29\tPASS\tNS=3;DP=14;AF=0.5;DB;H2\tGT:GQ:DP:HQ\t0|0:48:1:51,51\t1|0:48:8:51,51"
+    },
+    {
+      "tool": "noodles (rust)",
+      "kind": "ok",
+      "num_records": 1,
+      "records": [
+        [
+          "20",
+          14370,
+          "G",
+          [
+            "A"
+          ]
+        ]
+      ],
+      "error": null
+    }
+  ],
+  "provenance": [
+    "swap_ref_alt[r4]",
+    "drop_header['##contig=<ID=20,length=6']",
+    "del_col[r0,c11]"
+  ],
+  "files_with_this_signature": 331,
+  "minimized_lines": 3,
+  "minimized_vcf": "##fileformat=VCFv4.2\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tNA00001\tNA00002\tNA00003\n20\t14370\trs6054257\tG\tA\t29\tPASS\tNS=3;DP=14;AF=0.5;DB;H2\tGT:GQ:DP:HQ\t0|0:48:1:51,51\t1|0:48:8:51,51\n"
+}

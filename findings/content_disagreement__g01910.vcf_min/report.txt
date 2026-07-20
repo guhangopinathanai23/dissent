@@ -1,0 +1,15 @@
+CATCH: g01910.vcf_min
+bucket: content_disagreement
+detail: REAL content disagreement [partial; failed: noodles]: pysam vs vcfpy
+input : _final_g01910.vcf
+
+[pysam] pysam (htslib)  kind=ok
+    1 records:
+      20:1234567  REF='GTC'  ALT=['G', 'GTCT']  FMT=[{'DP': 4, 'GQ': 35, 'GT': '0/1'}, {'DP': 2, 'GQ': 17, 'GT': '0/2'}, {'DP': (1, 2), 'GQ': 40, 'GT': '1/1'}]
+
+[vcfpy] vcfpy (pure-python)  kind=ok
+    1 records:
+      20:1234567  REF='GTC'  ALT=['G', 'GTCT']  FMT=[{'DP': 4, 'GQ': 35, 'GT': '0/1'}, {'DP': 2, 'GQ': 17, 'GT': '0/2'}, {'DP': '1,2', 'GQ': 40, 'GT': '1/1'}]
+
+[noodles] noodles (rust)  kind=exception
+    error: InvalidData: invalid samples

@@ -1,0 +1,14 @@
+CATCH: g00698.vcf_min
+bucket: split_decision
+detail: parsed: vcfpy; rejected/crashed: pysam[exception], noodles[exception]. 1-vs-2: vcfpy accepted alone.
+input : _final_g00698.vcf
+
+[pysam] pysam (htslib)  kind=exception
+    error: OSError: unable to parse next record
+
+[vcfpy] vcfpy (pure-python)  kind=ok
+    1 records:
+      20:14370  REF='G'  ALT=['A']  FMT=[{'DP': 1, 'GQ': ('48',), 'GT': '0|0', 'HQ': ('0/0',)}, {'DP': 8, 'GQ': ('48',), 'GT': '1|0', 'HQ': (51, 51)}, {'DP': 5, 'GQ': ('43',), 'GT': '1/1'}]
+
+[noodles] noodles (rust)  kind=exception
+    error: InvalidData: invalid samples

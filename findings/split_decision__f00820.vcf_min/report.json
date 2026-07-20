@@ -1,0 +1,58 @@
+{
+  "label": "f00820.vcf_min",
+  "bucket": "split_decision",
+  "all_parsed": false,
+  "detail": "parsed: pysam, noodles; rejected/crashed: vcfpy[exception]. 2-vs-1: vcfpy is the outlier.",
+  "input_vcf": "_final_f00820.vcf",
+  "parsers": [
+    {
+      "tool": "pysam (htslib)",
+      "kind": "ok",
+      "num_records": 1,
+      "records": [
+        [
+          "20",
+          1234567,
+          "GTC",
+          [
+            "G",
+            "GTCT"
+          ]
+        ]
+      ],
+      "error": null
+    },
+    {
+      "tool": "vcfpy (pure-python)",
+      "kind": "exception",
+      "num_records": 0,
+      "records": [],
+      "error": "ValueError: invalid literal for int() with base 10: \"['0\""
+    },
+    {
+      "tool": "noodles (rust)",
+      "kind": "ok",
+      "num_records": 1,
+      "records": [
+        [
+          "20",
+          1234567,
+          "GTC",
+          [
+            "G",
+            "GTCT"
+          ]
+        ]
+      ],
+      "error": null
+    }
+  ],
+  "provenance": [
+    "truncate[r1]",
+    "drop_header['##reference=file:///seq/']",
+    "drop_header['##INFO=<ID=AA,Number=1,T']"
+  ],
+  "files_with_this_signature": 172,
+  "minimized_lines": 3,
+  "minimized_vcf": "##fileformat=VCFv4.2\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tNA00001\tNA00002\tNA00003\n20\t1234567\tmicrosat1\tGTC\tG,GTCT\t50\tPASS\tNS=3;DP=9;AA=G\tGT:GQ:DP\t0/1:35:4\t0/2:17:2\t1/1:40:3\n"
+}

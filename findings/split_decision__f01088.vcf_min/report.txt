@@ -1,0 +1,13 @@
+CATCH: f01088.vcf_min
+bucket: split_decision
+detail: parsed: vcfpy; rejected/crashed: pysam[exception], noodles[exception]. 1-vs-2: vcfpy accepted alone.
+input : _final_f01088.vcf
+
+[pysam] pysam (htslib)  kind=exception
+    error: OSError: unable to parse next record
+
+[vcfpy] vcfpy (pure-python)  kind=ok
+    0 records:
+
+[noodles] noodles (rust)  kind=exception
+    error: InvalidData: unexpected EOL

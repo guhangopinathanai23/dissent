@@ -1,0 +1,235 @@
+{
+  "label": "g01317.vcf_min",
+  "bucket": "content_disagreement",
+  "all_parsed": true,
+  "detail": "REAL content disagreement [all parsers parsed]: vcfpy+noodles vs pysam",
+  "input_vcf": "_final_g01317.vcf",
+  "parsers": [
+    {
+      "tool": "pysam (htslib)",
+      "kind": "ok",
+      "num_records": 1,
+      "records": [
+        [
+          "20",
+          1230237,
+          "T",
+          [],
+          [],
+          [
+            [
+              [
+                "DP",
+                7
+              ],
+              [
+                "GQ",
+                54
+              ],
+              [
+                "GT",
+                "."
+              ],
+              [
+                "HQ",
+                [
+                  56,
+                  60
+                ]
+              ]
+            ],
+            [
+              [
+                "DP",
+                4
+              ],
+              [
+                "GQ",
+                48
+              ],
+              [
+                "GT",
+                "0|0"
+              ],
+              [
+                "HQ",
+                [
+                  51,
+                  51
+                ]
+              ]
+            ],
+            [
+              [
+                "DP",
+                2
+              ],
+              [
+                "GQ",
+                61
+              ],
+              [
+                "GT",
+                "0/0"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "error": null
+    },
+    {
+      "tool": "vcfpy (pure-python)",
+      "kind": "ok",
+      "num_records": 1,
+      "records": [
+        [
+          "20",
+          1230237,
+          "T",
+          [],
+          [],
+          [
+            [
+              [
+                "DP",
+                7
+              ],
+              [
+                "GQ",
+                54
+              ],
+              [
+                "GT",
+                "1"
+              ],
+              [
+                "HQ",
+                [
+                  56,
+                  60
+                ]
+              ]
+            ],
+            [
+              [
+                "DP",
+                4
+              ],
+              [
+                "GQ",
+                48
+              ],
+              [
+                "GT",
+                "0|0"
+              ],
+              [
+                "HQ",
+                [
+                  51,
+                  51
+                ]
+              ]
+            ],
+            [
+              [
+                "DP",
+                2
+              ],
+              [
+                "GQ",
+                61
+              ],
+              [
+                "GT",
+                "0/0"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "error": null
+    },
+    {
+      "tool": "noodles (rust)",
+      "kind": "ok",
+      "num_records": 1,
+      "records": [
+        [
+          "20",
+          1230237,
+          "T",
+          [],
+          [],
+          [
+            [
+              [
+                "DP",
+                7
+              ],
+              [
+                "GQ",
+                54
+              ],
+              [
+                "GT",
+                "1"
+              ],
+              [
+                "HQ",
+                [
+                  56,
+                  60
+                ]
+              ]
+            ],
+            [
+              [
+                "DP",
+                4
+              ],
+              [
+                "GQ",
+                48
+              ],
+              [
+                "GT",
+                "0|0"
+              ],
+              [
+                "HQ",
+                [
+                  51,
+                  51
+                ]
+              ]
+            ],
+            [
+              [
+                "DP",
+                2
+              ],
+              [
+                "GQ",
+                61
+              ],
+              [
+                "GT",
+                "0/0"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "error": null
+    }
+  ],
+  "provenance": [
+    "gt[r1,s1='0']",
+    "gt[r3,s0='1']"
+  ],
+  "files_with_this_signature": 154,
+  "minimized_lines": 7,
+  "minimized_vcf": "##fileformat=VCFv4.2\n##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">\n##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Genotype Quality\">\n##FORMAT=<ID=DP,Number=1,Type=Integer,Description=\"Read Depth\">\n##FORMAT=<ID=HQ,Number=2,Type=Integer,Description=\"Haplotype Quality\">\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tNA00001\tNA00002\tNA00003\n20\t1230237\t.\tT\t.\t47\tPASS\tNS=3;DP=13;AA=T\tGT:GQ:DP:HQ\t1:54:7:56,60\t0|0:48:4:51,51\t0/0:61:2\n"
+}

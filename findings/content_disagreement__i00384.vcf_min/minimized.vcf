@@ -1,0 +1,5 @@
+##fileformat=VCFv4.2
+##INFO=<ID=AA,Number=1,Type=String,Description="Ancestral Allele">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NA00001	NA00002	NA00003
+20	1230237	.	T	.	47	PASS	NS=3;DP=13;AA=T,99	GT:GQ:DP:HQ	0|0:54:7:56,60	0|0:48:4:51,51	0/0:61:2

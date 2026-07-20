@@ -1,0 +1,16 @@
+CATCH: i00365.vcf_min
+bucket: content_disagreement  (SILENT: every parser succeeded)
+detail: REAL content disagreement [all parsers parsed]: pysam+vcfpy vs noodles
+input : _final_i00365.vcf
+
+[pysam] pysam (htslib)  kind=ok
+    1 records:
+      20:1110696  REF='A'  ALT=['G', 'T']  INFO={'AF': ('__nan__',)}
+
+[vcfpy] vcfpy (pure-python)  kind=ok
+    1 records:
+      20:1110696  REF='A'  ALT=['G', 'T']  INFO={'AF': ('__nan__',)}
+
+[noodles] noodles (rust)  kind=ok
+    1 records:
+      20:1110696  REF='A'  ALT=['G', 'T']  INFO={'AF': None}

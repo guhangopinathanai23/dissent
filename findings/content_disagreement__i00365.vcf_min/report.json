@@ -1,0 +1,88 @@
+{
+  "label": "i00365.vcf_min",
+  "bucket": "content_disagreement",
+  "all_parsed": true,
+  "detail": "REAL content disagreement [all parsers parsed]: pysam+vcfpy vs noodles",
+  "input_vcf": "_final_i00365.vcf",
+  "parsers": [
+    {
+      "tool": "pysam (htslib)",
+      "kind": "ok",
+      "num_records": 1,
+      "records": [
+        [
+          "20",
+          1110696,
+          "A",
+          [
+            "G",
+            "T"
+          ],
+          [
+            [
+              "AF",
+              [
+                "__nan__"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "error": null
+    },
+    {
+      "tool": "vcfpy (pure-python)",
+      "kind": "ok",
+      "num_records": 1,
+      "records": [
+        [
+          "20",
+          1110696,
+          "A",
+          [
+            "G",
+            "T"
+          ],
+          [
+            [
+              "AF",
+              [
+                "__nan__"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "error": null
+    },
+    {
+      "tool": "noodles (rust)",
+      "kind": "ok",
+      "num_records": 1,
+      "records": [
+        [
+          "20",
+          1110696,
+          "A",
+          [
+            "G",
+            "T"
+          ],
+          [
+            [
+              "AF",
+              null
+            ]
+          ]
+        ]
+      ],
+      "error": null
+    }
+  ],
+  "provenance": [
+    "info[r2,AF='NaN']"
+  ],
+  "files_with_this_signature": 36,
+  "minimized_lines": 5,
+  "minimized_vcf": "##fileformat=VCFv4.2\n##INFO=<ID=AF,Number=A,Type=Float,Description=\"Allele Frequency\">\n##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tNA00001\tNA00002\tNA00003\n20\t1110696\trs6040355\tA\tG,T\t67\tPASS\tNS=2;DP=10;AF=NaN;AA=T;DB\tGT:GQ:DP:HQ\t1|2:21:6:23,27\t2|1:2:0:18,2\t2/2:35:4\n"
+}

@@ -1,0 +1,16 @@
+CATCH: g00990.vcf_min
+bucket: content_disagreement  (SILENT: every parser succeeded)
+detail: REAL content disagreement [all parsers parsed]: vcfpy+noodles vs pysam
+input : _final_g00990.vcf
+
+[pysam] pysam (htslib)  kind=ok
+    1 records:
+      20:17330  REF='T'  ALT=['A']  FMT=[{'DP': 3, 'GQ': 49, 'GT': '0|0', 'HQ': (58, 50)}, {'DP': 5, 'GQ': 3, 'GT': '.', 'HQ': (65, 3)}, {'DP': 3, 'GQ': 41, 'GT': '0/0'}]
+
+[vcfpy] vcfpy (pure-python)  kind=ok
+    1 records:
+      20:17330  REF='T'  ALT=['A']  FMT=[{'DP': 3, 'GQ': 49, 'GT': '0|0', 'HQ': (58, 50)}, {'DP': 5, 'GQ': 3, 'HQ': (65, 3)}, {'DP': 3, 'GQ': 41, 'GT': '0/0'}]
+
+[noodles] noodles (rust)  kind=ok
+    1 records:
+      20:17330  REF='T'  ALT=['A']  FMT=[{'DP': 3, 'GQ': 49, 'GT': '0|0', 'HQ': (58, 50)}, {'DP': 5, 'GQ': 3, 'HQ': (65, 3)}, {'DP': 3, 'GQ': 41, 'GT': '0/0'}]

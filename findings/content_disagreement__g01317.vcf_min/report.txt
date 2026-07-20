@@ -1,0 +1,17 @@
+CATCH: g01317.vcf_min
+bucket: content_disagreement  (SILENT: every parser succeeded)
+detail: REAL content disagreement [all parsers parsed]: vcfpy+noodles vs pysam
+input : _final_g01317.vcf
+
+[pysam] pysam (htslib)  kind=ok
+    1 records:
+      20:1230237  REF='T'  ALT=[]  FMT=[{'DP': 7, 'GQ': 54, 'GT': '.', 'HQ': (56, 60)}, {'DP': 4, 'GQ': 48, 'GT': '0|0', 'HQ': (51, 51)}, {'DP': 2, 'GQ': 61, 'GT': '0/0'}]
+    NOTE: 20:1230237 sample[0] GT: file says '1' but pysam .samples API returns '.' (vcfpy/noodles report the file value)
+
+[vcfpy] vcfpy (pure-python)  kind=ok
+    1 records:
+      20:1230237  REF='T'  ALT=[]  FMT=[{'DP': 7, 'GQ': 54, 'GT': '1', 'HQ': (56, 60)}, {'DP': 4, 'GQ': 48, 'GT': '0|0', 'HQ': (51, 51)}, {'DP': 2, 'GQ': 61, 'GT': '0/0'}]
+
+[noodles] noodles (rust)  kind=ok
+    1 records:
+      20:1230237  REF='T'  ALT=[]  FMT=[{'DP': 7, 'GQ': 54, 'GT': '1', 'HQ': (56, 60)}, {'DP': 4, 'GQ': 48, 'GT': '0|0', 'HQ': (51, 51)}, {'DP': 2, 'GQ': 61, 'GT': '0/0'}]
